@@ -1,0 +1,12 @@
+{
+    "name": "7thsense-sw6/symfony-recipes",
+    "description": "7thSENSE Shopware 6 Symfony Recipes",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "7thSENSE GmbH",
+            "homepage": "https://www.7thsense.de",
+            "role": "Manufacturer"
+        }
+    ]
+}

@@ -1,0 +1,11 @@
+######################
+### IDE / OS / DEV ###
+######################
+.DS_Store
+/.idea
+/.buildpath
+/.cache
+/.metadata
+/.project
+/.settings
+/.vscode

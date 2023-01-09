@@ -1,0 +1,68 @@
+{
+    "manifests": {
+        "7thsense-sw6/project-commands": {
+            "manifest": {
+                "bundles": {
+                    "SeventhSense\\ProjectBundle\\SeventhSenseProjectBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "post-install-output": [
+                    "    * Modify your config/packages/plugins.yaml and add your project plugins"
+                ]
+            },
+            "files": {
+                "config/packages/plugins.yaml": {
+                    "contents": [
+                        "plugins:",
+                        "  # Base Setup - should be first!",
+                        "  SeventhSenseBaseSetup:",
+                        "    active: true",
+                        "    after: { 'bin/console seventhsense:base-setup:admin-user': { install: true, update: true } }",
+                        "  # END Base Setup",
+                        "",
+                        "  # Shopware Plugins",
+                        "  SwagCmsExtensions:",
+                        "    active: true",
+                        "    before: { './bin/build-storefront.sh': { install: true, update: true } }",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  SwagPlatformSecurity:",
+                        "    active: true",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  # END Shopware Plugins",
+                        "",
+                        "  # 3rd Party Plugins",
+                        "  FroshPlatformMailArchive:",
+                        "    active: true",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  FroshPlatformTemplateMail:",
+                        "    active: true",
+                        "    after: { './bin/build-storefront.sh': { install: true, update: true } }",
+                        "  # END 3rd Party Plugins",
+                        "",
+                        "  # 7thSENSE Vortex",
+                        "  # END 7thSENSE Vortex",
+                        "",
+                        "  # 7thSENSE Global Plugins",
+                        "  # END 7thSENSE Global Plugins",
+                        "",
+                        "  # Project Specific Plugins",
+                        "  # END Project Specific Plugins",
+                        "",
+                        "  # Project Themes",
+                        "  # END Project Themes",
+                        "",
+                        "  # Project Shop Setup should always be the last one!",
+                        "  # END Project Shop Setup",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "065ab47aaddeeb578f39a6ada3a5fbc247480605"
+        }
+    }
+}

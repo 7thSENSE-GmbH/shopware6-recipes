@@ -1,0 +1,32 @@
+{
+    "bundles": {
+        "SeventhSense\\ProjectBundle\\SeventhSenseProjectBundle": [
+            "all"
+        ]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%"
+    },
+    "env": {
+        "#1": "Redis cache configuration",
+        "REDIS_CACHE_HOST": "redis",
+        "REDIS_CACHE_PORT": 6379,
+        "REDIS_CACHE_DATABASE": 1,
+        "#2": "Redis session configuration",
+        "REDIS_SESSION_HOST": "redis",
+        "REDIS_SESSION_PORT": 6379,
+        "REDIS_SESSION_DATABASE": 0,
+        "#3": "Redis performance configuration",
+        "REDIS_PERFORMANCE_HOST": "redis",
+        "REDIS_PERFORMANCE_PORT": 6379,
+        "REDIS_PERFORMANCE_DATABASE": 2,
+        "#4": "Rabbit MQ configuration",
+        "RABBITMQ_HOST": "rabbitmq",
+        "RABBITMQ_PORT": 5672,
+        "RABBITMQ_USER": "rabbitmq",
+        "RABBITMQ_PASS": "rabbitmq",
+        "RABBITMQ_VHOST": "shopware6",
+        "#5": "Disable force -vvv on console commands if in debug mode",
+        "SHELL_VERBOSITY": 0
+    }
+}

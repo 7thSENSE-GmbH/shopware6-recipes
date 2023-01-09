@@ -1,0 +1,10 @@
+{
+    "bundles": {
+        "SeventhSense\\ProjectBundle\\SeventhSenseProjectBundle": [
+            "all"
+        ]
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%"
+    }
+}

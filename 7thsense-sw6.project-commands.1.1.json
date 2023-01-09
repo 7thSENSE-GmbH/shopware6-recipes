@@ -1,0 +1,90 @@
+{
+    "manifests": {
+        "7thsense-sw6/project-commands": {
+            "manifest": {
+                "bundles": {
+                    "SeventhSense\\ProjectBundle\\SeventhSenseProjectBundle": [
+                        "all"
+                    ]
+                },
+                "copy-from-recipe": {
+                    "config/": "%CONFIG_DIR%"
+                },
+                "env": {
+                    "#1": "Redis cache configuration",
+                    "REDIS_CACHE_HOST": "redis",
+                    "REDIS_CACHE_PORT": 6379,
+                    "REDIS_CACHE_DATABASE": 1,
+                    "#2": "Redis session configuration",
+                    "REDIS_SESSION_HOST": "redis",
+                    "REDIS_SESSION_PORT": 6379,
+                    "REDIS_SESSION_DATABASE": 0,
+                    "#3": "Redis performance configuration",
+                    "REDIS_PERFORMANCE_HOST": "redis",
+                    "REDIS_PERFORMANCE_PORT": 6379,
+                    "REDIS_PERFORMANCE_DATABASE": 2,
+                    "#4": "Rabbit MQ configuration",
+                    "RABBITMQ_HOST": "rabbitmq",
+                    "RABBITMQ_PORT": 5672,
+                    "RABBITMQ_USER": "rabbitmq",
+                    "RABBITMQ_PASS": "rabbitmq",
+                    "RABBITMQ_VHOST": "shopware6",
+                    "#5": "Disable force -vvv on console commands if in debug mode",
+                    "SHELL_VERBOSITY": 0
+                },
+                "post-install-output": [
+                    "    * Modify your config/plugins.yaml and add your project plugins"
+                ]
+            },
+            "files": {
+                "config/plugins.yaml": {
+                    "contents": [
+                        "plugins:",
+                        "  # Base Setup - should be first!",
+                        "  SeventhSenseBaseSetup:",
+                        "    active: true",
+                        "    after: { 'bin/console seventhsense:base-setup:admin-user': { install: true, update: true } }",
+                        "  # END Base Setup",
+                        "",
+                        "  # Shopware Plugins",
+                        "  SwagCmsExtensions:",
+                        "    active: true",
+                        "    before: { './bin/build-storefront.sh': { install: true, update: true } }",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  SwagPlatformSecurity:",
+                        "    active: true",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  # END Shopware Plugins",
+                        "",
+                        "  # 3rd Party Plugins",
+                        "  FroshPlatformMailArchive:",
+                        "    active: true",
+                        "    after: { './bin/build-administration.sh': { install: true, update: true } }",
+                        "  FroshPlatformTemplateMail:",
+                        "    active: true",
+                        "    after: { './bin/build-storefront.sh': { install: true, update: true } }",
+                        "  # END 3rd Party Plugins",
+                        "",
+                        "  # 7thSENSE Vortex",
+                        "  # END 7thSENSE Vortex",
+                        "",
+                        "  # 7thSENSE Global Plugins",
+                        "  # END 7thSENSE Global Plugins",
+                        "",
+                        "  # Project Specific Plugins",
+                        "  # END Project Specific Plugins",
+                        "",
+                        "  # Project Themes",
+                        "  # END Project Themes",
+                        "",
+                        "  # Project Shop Setup should always be the last one!",
+                        "  # END Project Shop Setup",
+                        ""
+                    ],
+                    "executable": false
+                }
+            },
+            "ref": "70d146b9b400c8046e981ca5e5b8eac194144c1b"
+        }
+    }
+}

@@ -1,0 +1,1 @@
+    * Modify your config/plugins.yaml and add your project plugins
