@@ -13,6 +13,6 @@
     "_links": {
         "repository": "github.com/7thSENSE-GmbH/shopware6-recipes",
         "origin_template": "{package}:{version}@github.com/7thSENSE-GmbH/shopware6-recipes:master",
-        "recipe_template": "https://api.github.com/repos/7thSENSE-GmbH/shopware6-recipes/contents/{package_dotted}.{version}.json",
+        "recipe_template": "https://api.github.com/repos/7thSENSE-GmbH/shopware6-recipes/contents/{package_dotted}.{version}.json"
     }
 }
