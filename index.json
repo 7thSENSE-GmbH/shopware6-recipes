@@ -11,9 +11,8 @@
     "branch": "master",
     "is_contrib": true,
     "_links": {
-        "repository": "gitlab.7thsense.de/shopware-6/7thsense/symfony-recipes",
-        "origin_template": "{package}:{version}@gitlab.7thsense.de/shopware-6/7thsense/symfony-recipes:master",
-        "recipe_template": "https://gitlab.7thsense.de/api/v4/projects/shopware-6%2F7thsense%2Fsymfony-recipes/repository/files/{package_dotted}.{version}.json/raw",
-        "archived_recipes_template": "https://gitlab.7thsense.de/api/v4/projects/shopware-6%2F7thsense%2Fsymfony-recipes/repository/files/archived/{package_dotted}/{ref}.json/raw"
+        "repository": "github.com/7thSENSE-GmbH/shopware6-recipes",
+        "origin_template": "{package}:{version}@github.com/7thSENSE-GmbH/shopware6-recipes:master",
+        "recipe_template": "https://api.github.com/repos/7thSENSE-GmbH/shopware6-recipes/contents/{package_dotted}.{version}.json",
     }
 }
